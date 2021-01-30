@@ -1,0 +1,148 @@
+<html>
+    <head>
+        <title>TEST</title>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <style>
+            .container{
+                margin-top: 50px;
+                border: 2px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="display-1">This is a nice title</h1>
+            <p>
+                Containers are the most basic layout element in Bootstrap and are required when using our default grid system. Containers are used to contain, pad, and (sometimes) center the content within them. While containers can be nested, most layouts do not require a nested container.
+
+Bootstrap comes with three different containers:
+
+.container, which sets a max-width at each responsive breakpoint
+.container-fluid, which is width: 100% at all breakpoints
+.container-{breakpoint}, which is width: 100% until the specified breakpoint
+The table below illustrates how each container’s max-width compares to the original .container and .container-fluid across each breakpoint.
+            </p>
+            <div class="text-center">
+                <img src="https://cf.bstatic.com/images/hotel/max500/113/113636841.jpg" />
+            </div>
+            <div class="text-center mt-2">
+                <button style="width:300px; padding: 20px" type="button" class="btn btn-outline-success">YES</button>
+                <button style="width:300px; padding: 20px" type="button" class="btn btn-outline-danger">NO</button>
+            </div>
+
+            <div class="row text-center mt-4">
+                <div class="col" style="border: 2px solid black;">
+                    TEST 1
+                  </div>
+                  <div class="col" style="border: 2px solid black;">
+                      TEST 2
+                  </div>
+                  <div class="col" style="border: 2px solid black;">
+                      TEST 3
+                  </div>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-3" style="border: 2px solid black;">
+                    TEST 1
+                  </div>
+                  <div class="col-6" style="border: 2px solid black;">
+                      TEST 2
+                  </div>
+                  <div class="col-3" style="border: 2px solid black;">
+                      TEST 3
+                  </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-2" style="border: 2px solid black;">
+                    TEST 1
+                  </div>
+                  <div class="col-8" style="border: 2px solid black;">
+                      TEST 2
+                  </div>
+                  <div class="col-2" style="border: 2px solid black;">
+                      TEST 3
+                  </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-1" style="border: 2px solid black;">
+                    TEST 1
+                  </div>
+                  <div class="col-10" style="border: 2px solid black;">
+                      TEST 2
+                  </div>
+                  <div class="col-1" style="border: 2px solid black;">
+                      TEST 3
+                  </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-2" style="border: 2px solid black;">
+                    TEST 1
+                  </div>
+                  <div class="col-2" style="border: 2px solid black;">
+                      TEST 2
+                  </div>
+                  <div class="col-5" style="border: 2px solid black;">
+                      TEST 3
+                  </div>
+                  <div class="col-2" style="border: 2px solid black;">
+                    TEST 4
+                  </div>
+                  <div class="col-1" style="border: 2px solid black;">
+                      TEST 5
+                  </div>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-6" style="border: 2px solid black; background-color: darkgoldenrod;">
+                    TEST 1
+                  </div>
+                  <div class="col-6" style="border: 2px solid black; background-color: burlywood;">
+                      TEST 2
+                  </div>
+            </div>
+
+            <div class="row mt-4">
+                <select class="form-select">
+                    <option>Blue</option>
+                    <option>Red</option>
+                    <option>Green</option>
+                    <option>Blue</option>
+                    <option>Red</option>
+                    <option>Green</option>
+                    <option>Blue</option>
+                    <option>Red</option>
+                    <option>Green</option>
+                  </select>
+            </div>
+
+            <div class="row">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" >
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Default checkbox
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                      Checked checkbox
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Default checked radio
+                    </label>
+                  </div>
+            </div>
+        </div>
+    </body>
+</html>
