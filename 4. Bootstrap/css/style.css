@@ -1,0 +1,73 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+body{
+    font-family: Montserrat;
+}
+
+.me-15{
+    margin-right: 200px;
+}
+
+.mt-10{
+    margin-top: 100px;
+}
+
+.subtitle{
+    color:#f0932b;
+}
+
+.btn-outline-success{
+    color:#ffffff;
+    background-color: #f0932b;
+    border-color: #f0932b;
+    border-radius: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.btn-outline-success:hover{
+    color: #f0932b;
+    background-color: #ffffff;
+    border-color: #f0932b;
+}
+
+.active{
+    border-bottom: 2px solid #f0932b;
+}
+
+.nav-link:hover{
+    font-weight: 900;
+}
+
+.main-image{
+    height: 600px;
+}
+
+.title{
+    font-size: 80px;
+    line-height: 95%;
+}
+
+.description{
+    width: 300px;
+}
+
+.play-button{
+    color: #f0932b;
+    background-color:#ffffff;
+    border-color: #f0932b;
+    border-radius: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* width: 50px;
+    height: 50px; */
+}
+
+.play-button:hover{
+    color: #ffffff;
+    background-color: #f0932b;
+    border-color: #f0932b;
+}
