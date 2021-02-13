@@ -1,0 +1,36 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+body{
+    /* font-family: Montserrat; */
+}
+
+.table-header-item {
+    background-color: burlywood!important;
+}
+
+.test-link{
+    color:black;
+}
+
+.title{
+    font-size: 100px;
+}
+
+h1 {
+font-size: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.a {
+    text-decoration: underline;
+}
+
+.p{
+    border: 10px solid red;
+}
