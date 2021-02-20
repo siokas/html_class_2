@@ -1,0 +1,50 @@
+.container{
+    margin-right: 300px;
+    margin-left: 300px;
+    margin-top: 50px;
+}
+
+.question{
+    margin-top: 30px;
+    font-size: 50px;
+    border: 2px solid black;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.message{
+    text-align: center;
+    font-size: 25px;
+    margin-top:10px;
+}
+
+.buttons{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn{
+    font-size: 30px;
+    padding: 10px;
+    width: 250px;
+    border: 0px;
+}
+
+.btn-true{
+    background-color: #9cde84;
+}
+
+.btn-false{
+    background-color: #de9084;
+}
+
+.btn-true:hover{
+    background-color: #5b804e;
+    color:#ffffff;
+}
+
+.btn-false:hover{
+    background-color: #794e49;
+    color:#ffffff;
+}

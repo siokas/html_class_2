@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TEST</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="title">Question Game</h1>
+      <a href="/about">ABOUT</a>
+      <div id="question" class="question">
+          Ο Bruce Wane είναι ο Superman?
+      </div>
+      <div id="message" class="message">
+          
+      </div>
+      <div class="buttons">
+          <button id="btn-true" class="btn btn-true" onclick="answerButton(true)">ΣΩΣΤΟ</button>
+          <button id="btn-false" class="btn btn-false" onclick="answerButton(false)">ΛΑΘΟΣ</button>
+      </div>
+    </div>
+
+    <script>
+        var question = document.getElementById("question")
+        var message = document.getElementById("message")
+
+        var btnTrue = document.getElementById("btn-true")
+        var btnFalse = document.getElementById("btn-false")
+
+        function answerButton(answer){
+            if(answer == true){
+                question.style.backgroundColor = "red"
+                message.style.color = "red"
+                message.innerHTML = "Η απάντησή σας είναι ΛΑΘΟΣ!"
+                btnTrue.style.border = "5px solid black"
+                btnTrue.disabled = true
+                btnFalse.disabled = true
+                // btnFalse.hidden = true
+                // btnTrue.hidden = true
+            }else{
+                question.style.backgroundColor = "green"
+                message.style.color = "green"
+                message.innerHTML = "Η απάντησή σας είναι ΣΩΣΤΗ!"
+                btnFalse.style.border = "5px solid black"
+                btnTrue.disabled = true
+                btnFalse.disabled = true
+                // btnFalse.hidden = true
+                // btnTrue.hidden = true
+            }
+        }
+    </script>
+  </body>
+</html>
