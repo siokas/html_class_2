@@ -7,49 +7,113 @@
     <link href="css/style.css" rel="stylesheet" />
   </head>
   <body>
+    <div class="navbar">
+      <h1 class="title" id="title">QGme</h1>
+      <div class="nav-links-container">
+        <a class="navlink" href="index.html">Αρχική</a>
+        <a class="navlink" href="about.html">Σχετικά</a>
+        <a class="navlink" href="contact.html">Επικοινωνία</a>
+      </div>
+    </div>
     <div class="container">
-      <h1 id="title">Question Game</h1>
-      <a href="/about">ABOUT</a>
-      <div id="question" class="question">
-          Ο Bruce Wane είναι ο Superman?
+      <div class="score-board">Score: <span id="score">0</span></div>
+      <div class="score-board">
+        Ερώτηση: <span id="question-number">1</span>
       </div>
-      <div id="message" class="message">
-          
-      </div>
+      <div id="question" class="question"></div>
+      <div id="message" class="message"></div>
       <div class="buttons">
-          <button id="btn-true" class="btn btn-true" onclick="answerButton(true)">ΣΩΣΤΟ</button>
-          <button id="btn-false" class="btn btn-false" onclick="answerButton(false)">ΛΑΘΟΣ</button>
+        <button id="btn-true" class="btn btn-true" onclick="answerButton(true)">
+          ΣΩΣΤΟ
+        </button>
+        <button
+          id="btn-false"
+          class="btn btn-false"
+          onclick="answerButton(false)"
+        >
+          ΛΑΘΟΣ
+        </button>
+      </div>
+
+      <div class="btn-next-container">
+        <button
+          class="btn btn-next"
+          id="btn-next"
+          hidden="true"
+          onclick="nextQuestion()"
+        >
+          Επόμενη Ερώτηση
+        </button>
       </div>
     </div>
 
+    <script src="js/questions.js"></script>
     <script>
-        var question = document.getElementById("question")
-        var message = document.getElementById("message")
+      var question = document.getElementById("question");
+      var message = document.getElementById("message");
 
-        var btnTrue = document.getElementById("btn-true")
-        var btnFalse = document.getElementById("btn-false")
+      var btnTrue = document.getElementById("btn-true");
+      var btnFalse = document.getElementById("btn-false");
+      var btnNext = document.getElementById("btn-next");
+      var scoreText = document.getElementById("score");
+      var questionNumberText = document.getElementById("question-number");
 
-        function answerButton(answer){
-            if(answer == true){
-                question.style.backgroundColor = "red"
-                message.style.color = "red"
-                message.innerHTML = "Η απάντησή σας είναι ΛΑΘΟΣ!"
-                btnTrue.style.border = "5px solid black"
-                btnTrue.disabled = true
-                btnFalse.disabled = true
-                // btnFalse.hidden = true
-                // btnTrue.hidden = true
-            }else{
-                question.style.backgroundColor = "green"
-                message.style.color = "green"
-                message.innerHTML = "Η απάντησή σας είναι ΣΩΣΤΗ!"
-                btnFalse.style.border = "5px solid black"
-                btnTrue.disabled = true
-                btnFalse.disabled = true
-                // btnFalse.hidden = true
-                // btnTrue.hidden = true
-            }
+      var questionNumber = 0;
+      var score = 0;
+      var maxQuestions = questions.length;
+
+      renderQuestion();
+
+      function renderQuestion() {
+        question.innerHTML = questions[questionNumber].question;
+      }
+
+      function nextQuestion() {
+        if ((questionNumber+1) < maxQuestions) {
+          questionNumber++; // questionNumber = questionNumber + 1;
+          renderQuestion();
+          question.style.backgroundColor = "white";
+          message.innerHTML = "";
+          btnNext.hidden = true;
+          btnTrue.disabled = false;
+          btnFalse.disabled = false;
+          btnTrue.style.border = "none";
+          btnFalse.style.border = "none";
+          questionNumberText.innerHTML = questionNumber + 1;
+        }else{
+          gameover();
         }
+      }
+
+      function gameover(){
+        btnNext.hidden = true;
+        btnTrue.hidden = true;
+        btnFalse.hidden = true;
+        message.hidden = true;
+        question.style.backgroundColor = "white";
+        question.innerHTML = "Από τις " + maxQuestions + " ερωτήσεις απάντησες σωστά στις " + score;
+      }
+
+      function answerButton(answer) {
+        btnNext.hidden = false;
+        if (answer == questions[questionNumber].answer) {
+          question.style.backgroundColor = "green";
+          message.style.color = "green";
+          message.innerHTML = "Η απάντησή σας είναι ΣΩΣΤΗ!";
+          btnFalse.style.border = "5px solid black";
+          btnTrue.disabled = true;
+          btnFalse.disabled = true;
+          score++;
+          scoreText.innerHTML = score;
+        } else {
+          question.style.backgroundColor = "red";
+          message.style.color = "red";
+          message.innerHTML = "Η απάντησή σας είναι ΛΑΘΟΣ!";
+          btnTrue.style.border = "5px solid black";
+          btnTrue.disabled = true;
+          btnFalse.disabled = true;
+        }
+      }
     </script>
   </body>
 </html>
