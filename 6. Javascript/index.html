@@ -22,6 +22,7 @@
       </div>
       <div id="question" class="question"></div>
       <div id="message" class="message"></div>
+      <div id="wiki" class="wiki"></div>
       <div class="buttons">
         <button id="btn-true" class="btn btn-true" onclick="answerButton(true)">
           ΣΩΣΤΟ
@@ -44,6 +45,14 @@
         >
           Επόμενη Ερώτηση
         </button>
+        <button
+          class="btn btn-restart"
+          id="btn-restart"
+          hidden="true"
+          onclick="restartGame()"
+        >
+          Restart Game
+        </button>
       </div>
     </div>
 
@@ -51,27 +60,40 @@
     <script>
       var question = document.getElementById("question");
       var message = document.getElementById("message");
-
+      var wiki = document.getElementById("wiki");
       var btnTrue = document.getElementById("btn-true");
       var btnFalse = document.getElementById("btn-false");
       var btnNext = document.getElementById("btn-next");
+      var btnRestart = document.getElementById("btn-restart");
       var scoreText = document.getElementById("score");
       var questionNumberText = document.getElementById("question-number");
 
       var questionNumber = 0;
       var score = 0;
+      var standarQuestions = questions.length;
       var maxQuestions = questions.length;
+      var random = Math.floor(Math.random() * maxQuestions);
 
-      renderQuestion();
+      renderRandomQuestion();
+
+      function renderRandomQuestion() {
+        maxQuestions = questions.length;
+        random = Math.floor(Math.random() * maxQuestions);
+        console.log(random);
+        console.log(questions);
+        question.innerHTML = questions[random].question;
+      }
 
       function renderQuestion() {
         question.innerHTML = questions[questionNumber].question;
       }
 
       function nextQuestion() {
-        if ((questionNumber+1) < maxQuestions) {
+        questions.splice(random, 1);
+        wiki.innerHTML = "";
+        if (questionNumber < maxQuestions) {
           questionNumber++; // questionNumber = questionNumber + 1;
-          renderQuestion();
+          renderRandomQuestion();
           question.style.backgroundColor = "white";
           message.innerHTML = "";
           btnNext.hidden = true;
@@ -80,18 +102,23 @@
           btnTrue.style.border = "none";
           btnFalse.style.border = "none";
           questionNumberText.innerHTML = questionNumber + 1;
-        }else{
+        } else {
           gameover();
         }
       }
 
-      function gameover(){
+      function gameover() {
         btnNext.hidden = true;
         btnTrue.hidden = true;
         btnFalse.hidden = true;
+        btnRestart.hidden = false;
         message.hidden = true;
         question.style.backgroundColor = "white";
-        question.innerHTML = "Από τις " + maxQuestions + " ερωτήσεις απάντησες σωστά στις " + score;
+        question.innerHTML =
+          "Από τις " +
+          maxQuestions +
+          " ερωτήσεις απάντησες σωστά στις " +
+          score;
       }
 
       function answerButton(answer) {
@@ -113,6 +140,26 @@
           btnTrue.disabled = true;
           btnFalse.disabled = true;
         }
+
+        if (questions[questionNumber].wiki) {
+          wiki.innerHTML = questions[questionNumber].wiki;
+        }
+      }
+
+      function restartGame() {
+        // window.location = "./index.html";
+        btnRestart.hidden = true;
+        btnTrue.hidden = false;
+        btnFalse.hidden = false;
+        btnTrue.disabled = false;
+        btnFalse.disabled = false;
+        btnTrue.style.border = "none";
+        btnFalse.style.border = "none";
+        questionNumber = 0;
+        renderRandomQuestion();
+        score = 0;
+        scoreText.innerHTML = 0;
+        questionNumberText.innerHTML = 1;
       }
     </script>
   </body>

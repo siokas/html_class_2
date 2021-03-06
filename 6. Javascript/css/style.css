@@ -76,6 +76,12 @@
     background-color: bisque;
 }
 
+.btn-restart{
+    width: 505px;
+    background-color: darkcyan;
+    color: antiquewhite;
+}
+
 .btn-next-container{
     text-align: center;
     margin-top: 5px;
@@ -83,4 +89,12 @@
 
 .score-board{
     font-size: 20px;
+}
+
+.wiki{
+    text-align: center;
+    font-size: 25px;
+    margin-top:10px;
+    color:darkgoldenrod;
+    font-family: 'Courier New', Courier, monospace;
 }
