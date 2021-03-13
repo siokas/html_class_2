@@ -82,12 +82,22 @@
     color: antiquewhite;
 }
 
+.btn-start{
+    width: 505px;
+    background-color: slateblue;
+    color: aliceblue;
+}
+
 .btn-next-container{
     text-align: center;
     margin-top: 5px;
 }
 
 .score-board{
+    font-size: 20px;
+}
+
+.timer{
     font-size: 20px;
 }
 

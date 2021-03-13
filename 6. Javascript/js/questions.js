@@ -1,5 +1,3 @@
-var x = ['a','b','c','d'];
-// 2. Επιλογή random 1 από τα elements -> delete element
 var questions = [
     {
         "question": "Ο Bruce Wane είναι ο Superman",
